@@ -150,4 +150,4 @@ int main() {
 }
 ```
 
-Back to [[00 - Start here]].
+Back to [[index|Course Index]].
