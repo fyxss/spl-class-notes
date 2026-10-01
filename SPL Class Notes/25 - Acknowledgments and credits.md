@@ -4,9 +4,9 @@ aliases: [Acknowledgments, Credits, Acknowledgments and credits, Acknowledgments
 tags: [spl, acknowledgments, credits]
 ---
 
-![SUST CSE 25 Class](GRP.jpg)
-
 # 25 — Acknowledgments and credits
+
+![SUST CSE 25 Class](GRP.jpg)
 
 This resource exists thanks to the guidance of our instructor and the dedicated effort of our peers:
 
