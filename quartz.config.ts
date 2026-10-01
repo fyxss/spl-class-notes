@@ -18,12 +18,12 @@ const config: QuartzConfig = {
     ignorePatterns: ["private", "templates", ".obsidian", "*.pdf", "*.bak"],
     defaultDateType: "modified",
     theme: {
-      fontOrigin: "local",
+      fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Bookerly",
-        body: "Bookerly",
-        code: "IBM Plex Mono",
+        header: "Inter",
+        body: "Inter",
+        code: "JetBrains Mono",
       },
       colors: {
         lightMode: {
@@ -31,8 +31,8 @@ const config: QuartzConfig = {
           light: "#fcfdfe",
           lightgray: "#eff2f7",
           gray: "#98a5bc",
-          darkgray: "#364257",
-          dark: "#182030",
+          darkgray: "#20242c",
+          dark: "#111620",
           secondary: "#1396a0",
           tertiary: "#5460ab",
           highlight: "rgba(19, 150, 160, 0.14)",

@@ -1,37 +1,7 @@
 @use "./base.scss";
 
 // -------------------------------------------------------------
-// Bookerly Font Definitions (Local & Self-Hosted Fallback)
-// -------------------------------------------------------------
-@font-face {
-  font-family: 'Bookerly';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local('Bookerly'),
-       url('./static/fonts/Bookerly-Regular.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Bookerly';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: local('Bookerly Italic'),
-       url('./static/fonts/Bookerly-Regular.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Bookerly';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: local('Bookerly Bold'), local('Bookerly-Bold'),
-       url('./static/fonts/Bookerly-Bold.ttf') format('truetype');
-}
-
-// -------------------------------------------------------------
-// Global Typography: Bookerly Serif
+// Global Typography: Inter & JetBrains Mono
 // -------------------------------------------------------------
 body,
 article,
@@ -41,18 +11,23 @@ blockquote,
 .callout-content,
 .popover,
 table {
-  font-family: var(--bodyFont), "Bookerly", Georgia, Cambria, "Times New Roman", Times, serif;
-  font-size: 1.05rem;
-  line-height: 1.72;
-  letter-spacing: -0.01em;
+  font-family: var(--bodyFont), "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.7;
 }
 
 h1, h2, h3, h4, h5, h6,
 .article-title,
 .page-title {
-  font-family: var(--headerFont), "Bookerly", Georgia, serif;
+  font-family: var(--headerFont), "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   letter-spacing: -0.02em;
   font-weight: 700;
+}
+
+code,
+pre,
+kbd {
+  font-family: var(--codeFont), "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
 }
 
 // =============================================================
@@ -70,7 +45,14 @@ h1, h2, h3, h4, h5, h6,
 
   body {
     background-color: var(--shimmer-bg);
-    color: #364257;
+    color: var(--darkgray);
+  }
+
+  p,
+  li,
+  blockquote,
+  table {
+    color: var(--darkgray);
   }
 
   // Shimmering Focus alternating Periwinkle / Teal headings
