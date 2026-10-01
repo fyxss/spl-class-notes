@@ -1,0 +1,9 @@
+/* Scale Mermaid diagrams to 80% and keep them centered */
+.mermaid svg,
+.block-language-mermaid svg {
+  max-width: 80% !important;
+  width: 80% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 0 auto !important;
+}

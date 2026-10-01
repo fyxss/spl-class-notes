@@ -1,0 +1,16 @@
+/* Ensure inline SVGs render consistently in Reading View and Live Preview */
+.markdown-rendered svg {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  overflow: visible !important;
+}
+
+/* Prevent Obsidian theme styles from filling stroked path lines (e.g. resistors, traversal arrows) */
+.markdown-rendered svg path[fill="none"] {
+  fill: none !important;
+}
+
+/* Ensure text rendering and baseline consistency */
+.markdown-rendered svg text {
+  text-rendering: geometricPrecision !important;
+}

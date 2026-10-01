@@ -1,0 +1,186 @@
+@use "./base.scss";
+
+// -------------------------------------------------------------
+// Bookerly Font Definitions (Local & Self-Hosted Fallback)
+// -------------------------------------------------------------
+@font-face {
+  font-family: 'Bookerly';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Bookerly'),
+       url('./static/fonts/Bookerly-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Bookerly';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Bookerly Italic'),
+       url('./static/fonts/Bookerly-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Bookerly';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Bookerly Bold'), local('Bookerly-Bold'),
+       url('./static/fonts/Bookerly-Bold.ttf') format('truetype');
+}
+
+// -------------------------------------------------------------
+// Global Typography: Bookerly Serif
+// -------------------------------------------------------------
+body,
+article,
+p,
+li,
+blockquote,
+.callout-content,
+.popover,
+table {
+  font-family: var(--bodyFont), "Bookerly", Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 1.05rem;
+  line-height: 1.72;
+  letter-spacing: -0.01em;
+}
+
+h1, h2, h3, h4, h5, h6,
+.article-title,
+.page-title {
+  font-family: var(--headerFont), "Bookerly", Georgia, serif;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+// =============================================================
+// LIGHT THEME: Shimmering Focus (by Chris Grieser)
+// =============================================================
+:root,
+:root[saved-theme="light"] {
+  --shimmer-teal: #1396a0;
+  --shimmer-indigo: #5460ab;
+  --shimmer-amber: #c67e3f;
+  --shimmer-hover: #dc388f;
+  --shimmer-bg: #fcfdfe;
+  --shimmer-card: #f7f9fd;
+  --shimmer-border: #e2e8f4;
+
+  body {
+    background-color: var(--shimmer-bg);
+    color: #364257;
+  }
+
+  // Shimmering Focus alternating Periwinkle / Teal headings
+  h1, .article-title {
+    color: var(--shimmer-indigo) !important;
+  }
+
+  h2 {
+    color: var(--shimmer-teal) !important;
+  }
+
+  h3 {
+    color: var(--shimmer-indigo) !important;
+  }
+
+  h4, h5, h6 {
+    color: var(--shimmer-teal) !important;
+  }
+
+  // Shimmering Focus links with signature magenta hover shimmer
+  article a {
+    color: var(--shimmer-teal);
+    text-decoration: underline;
+    text-decoration-color: rgba(19, 150, 160, 0.35);
+    text-underline-offset: 3px;
+    transition: color 0.15s ease, text-decoration-color 0.15s ease;
+
+    &:hover {
+      color: var(--shimmer-hover) !important;
+      text-decoration-color: var(--shimmer-hover) !important;
+    }
+  }
+
+  // Shimmering Focus callout styling
+  .callout {
+    background-color: var(--shimmer-card);
+    border: 1.5px solid var(--shimmer-border);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+
+  // Shimmering Focus soft code blocks
+  pre {
+    background-color: #f3f6fb !important;
+    border: 1px solid var(--shimmer-border);
+    border-radius: 6px;
+  }
+
+  // Sidebar & Search borders
+  .sidebar, .explorer, .search {
+    border-color: var(--shimmer-border);
+  }
+}
+
+// =============================================================
+// DARK THEME: Obsidianite (by Benny Guo)
+// =============================================================
+:root[saved-theme="dark"] {
+  --obsidianite-cyan: #0fb6d6;
+  --obsidianite-magenta: #f4569d;
+  --obsidianite-sky: #6bcafb;
+  --obsidianite-purple-bg: #100e17;
+  --obsidianite-surface: #191621;
+
+  body {
+    background-color: var(--obsidianite-purple-bg);
+    color: #c5c5d2;
+  }
+
+  // Luminous cyan headings with atmospheric glow
+  h1, .article-title {
+    color: var(--obsidianite-cyan) !important;
+    text-shadow: 0 0 16px rgba(15, 182, 214, 0.25);
+  }
+
+  h2, h3, h4 {
+    color: #e2e8f0 !important;
+    text-shadow: none;
+  }
+
+  // Obsidianite sky-blue links with neon-magenta hover glow
+  article a {
+    color: var(--obsidianite-sky);
+    text-decoration-color: rgba(107, 202, 251, 0.3);
+    text-underline-offset: 3px;
+    transition: color 0.15s ease, text-shadow 0.15s ease;
+
+    &:hover {
+      color: var(--obsidianite-magenta) !important;
+      text-decoration-color: var(--obsidianite-magenta) !important;
+      text-shadow: 0 0 10px rgba(244, 86, 157, 0.35);
+    }
+  }
+
+  // Obsidianite dark panel callouts
+  .callout {
+    background-color: #15131f;
+    border-color: rgba(15, 182, 214, 0.25);
+    border-radius: 8px;
+  }
+
+  // Search and explorer panel borders
+  .sidebar, .explorer, .search {
+    border-color: rgba(15, 182, 214, 0.12);
+  }
+
+  // Obsidianite code blocks
+  pre {
+    background-color: #15131f !important;
+    border: 1px solid rgba(15, 182, 214, 0.15);
+    border-radius: 6px;
+  }
+}

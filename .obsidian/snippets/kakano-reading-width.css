@@ -1,0 +1,30 @@
+/* Kakano Theme - Reading View Width Adjustment */
+:root {
+  /*
+    Reading view line width calculation:
+    - Default editing mode line length in Kakano is 60 characters (~600px).
+    - Setting this to 1.2x (72 characters, ~720px) gives 20% more horizontal width for reading mode.
+    - If you ever want exact same width as editing mode, change 1.2 to 1.0 (or set to 60).
+  */
+  --theme-setting-lineWidthReadingView: calc(var(--theme-setting-lineWidth, 60) * 1.2);
+  --file-line-width-preview: calc(0.625rem * var(--theme-setting-lineWidthReadingView));
+}
+
+/* Constrain Reading View to readable line width */
+.markdown-preview-view.is-readable-line-width .markdown-preview-sizer {
+  margin-inline-start: auto !important;
+  margin-inline-end: auto !important;
+  max-width: var(--file-line-width-preview) !important;
+  width: 100% !important;
+}
+
+/* Match the document inline title to the reading view width */
+.markdown-preview-view.is-readable-line-width .inline-title {
+  max-width: var(--file-line-width-preview) !important;
+}
+
+/* Prevent metadata container from overflowing */
+body:not(.is-mobile) .mod-root .markdown-reading-view .metadata-container {
+  width: 100% !important;
+  margin: 0 auto !important;
+}

@@ -1,0 +1,85 @@
+/* ==========================================================================
+   Blue Topaz Theme - Unified One-Piece Callouts
+   Fixes the split/two-part callout (colored heading, white body) so that the
+   heading and body share the exact same background color in a cohesive structure.
+   ========================================================================== */
+
+:root {
+  /* Callout background tint opacity (12% provides a clean, readable tint) */
+  --callout-blend-opacity: 12%;
+  /* Border radius for callout box */
+  --callout-radius: 4px;
+}
+
+/* 1. Unify the Callout Container
+      Give the whole callout a single continuous background and a crisp left accent border.
+      Excludes special custom layouts (kanban, cards, stickies, etc.) to preserve their behavior. */
+:is(.markdown-rendered, .markdown-source-view.mod-cm6) .callout:not([data-callout*="cards"]):not([data-callout*="blank"]):not([data-callout*="noborder"]):not([data-callout*="banner"]):not([data-callout*="kanban"]):not([data-callout*="hibox"]):not([data-callout*="infobox"]):not([data-callout*="timeline"]):not([data-callout*="stickies"]):not(.admonition-def):not(.admonition-thm):not(.admonition-lem):not(.admonition-cor):not(.admonition-pro) {
+  background-color: color-mix(in srgb, var(--callout-color) var(--callout-blend-opacity, 12%), transparent) !important;
+  border-left: 4px solid var(--callout-color) !important;
+  border-top: none !important;
+  border-right: none !important;
+  border-bottom: none !important;
+  border-radius: var(--callout-radius, 4px) !important;
+  overflow: hidden;
+  padding: 0 !important;
+  box-shadow: none;
+}
+
+/* 2. Unify the Callout Title
+      Remove the separate colored strip on the title so it seamlessly flows into the body. */
+:is(.markdown-rendered, .markdown-source-view.mod-cm6) .callout:not([data-callout*="cards"]):not([data-callout*="blank"]):not([data-callout*="noborder"]):not([data-callout*="banner"]):not([data-callout*="kanban"]):not([data-callout*="hibox"]):not([data-callout*="infobox"]):not([data-callout*="timeline"]):not([data-callout*="stickies"]) > .callout-title {
+  background-color: transparent !important;
+  color: var(--callout-color) !important;
+  padding: 10px 14px 6px 14px !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Balanced vertical padding when callout is collapsed */
+:is(.markdown-rendered, .markdown-source-view.mod-cm6) .callout.is-collapsed > .callout-title {
+  padding: 10px 14px !important;
+}
+
+/* 3. Callout Icon, Title Inner, and Fold Arrow Accent Styling */
+:is(.markdown-rendered, .markdown-source-view.mod-cm6) .callout .callout-icon {
+  color: var(--callout-color) !important;
+  display: flex;
+  align-items: center;
+}
+
+:is(.markdown-rendered, .markdown-source-view.mod-cm6) .callout .callout-title-inner {
+  color: var(--callout-color) !important;
+  font-weight: 600;
+}
+
+:is(.markdown-rendered, .markdown-source-view.mod-cm6) .callout .callout-fold {
+  color: var(--callout-color) !important;
+  opacity: 0.75;
+  display: flex;
+  align-items: center;
+}
+
+/* 4. Callout Body Content
+      Transparent background so container background covers the whole callout.
+      Ensures consistent breathing room in both Reading View and Live Preview. */
+:is(.markdown-rendered, .markdown-source-view.mod-cm6) .callout:not([data-callout*="cards"]):not([data-callout*="blank"]):not([data-callout*="noborder"]):not([data-callout*="banner"]):not([data-callout*="kanban"]):not([data-callout*="hibox"]):not([data-callout*="infobox"]):not([data-callout*="timeline"]):not([data-callout*="stickies"]) > .callout-content {
+  background-color: transparent !important;
+  padding: 0 14px 12px 14px !important;
+}
+
+/* Live Preview content spacing fix */
+.markdown-source-view.is-live-preview .callout:not([data-callout*="cards"]):not([data-callout*="blank"]):not([data-callout*="noborder"]):not([data-callout*="banner"]):not([data-callout*="kanban"]):not([data-callout*="hibox"]):not([data-callout*="infobox"]):not([data-callout*="timeline"]):not([data-callout*="stickies"]) > .callout-content {
+  padding-top: 0 !important;
+  padding-bottom: 12px !important;
+}
+
+/* Spacing between title and first element, and cleanup bottom margin */
+:is(.markdown-rendered, .markdown-source-view.mod-cm6) .callout > .callout-content > *:first-child {
+  margin-top: 2px;
+}
+
+:is(.markdown-rendered, .markdown-source-view.mod-cm6) .callout > .callout-content > *:last-child {
+  margin-bottom: 0;
+}
