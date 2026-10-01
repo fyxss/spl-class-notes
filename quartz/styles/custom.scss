@@ -33,7 +33,6 @@ kbd {
 // =============================================================
 // LIGHT THEME: Shimmering Focus (by Chris Grieser)
 // =============================================================
-:root,
 :root[saved-theme="light"] {
   --shimmer-teal: #1396a0;
   --shimmer-indigo: #5460ab;
@@ -110,6 +109,7 @@ kbd {
 // =============================================================
 // DARK THEME: Obsidianite (by Benny Guo)
 // =============================================================
+:root,
 :root[saved-theme="dark"] {
   --obsidianite-cyan: #0fb6d6;
   --obsidianite-magenta: #f4569d;
