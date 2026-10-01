@@ -1,8 +1,12 @@
 ---
-title: "Acknowledgments & Credits"
+title: "25 - Acknowledgments and credits"
+aliases: [Acknowledgments, Credits, Acknowledgments and credits, Acknowledgments & Credits]
+tags: [spl, acknowledgments, credits]
 ---
 
-# Acknowledgments & Credits
+![SUST CSE 25 Class](GRP.jpg)
+
+# 25 — Acknowledgments and credits
 
 This resource exists thanks to the guidance of our instructor and the dedicated effort of our peers:
 

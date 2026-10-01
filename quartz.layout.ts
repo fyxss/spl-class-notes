@@ -8,7 +8,7 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     links: {
-      Credits: "Acknowledgments",
+      Credits: "25 - Acknowledgments and credits",
       GitHub: "https://github.com/fyxss/spl-class-notes",
     },
   }),
