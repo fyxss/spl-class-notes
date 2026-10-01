@@ -4,6 +4,8 @@ aliases: [SPL notes, Structured Programming Language, 00 - Start here]
 tags: [spl, c-programming]
 ---
 
+![SUST CSE 25](BG.png)
+
 # Structured Programming Language
 
 ## Contents
